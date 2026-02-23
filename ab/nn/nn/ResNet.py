@@ -142,7 +142,7 @@ class Net(nn.Module):
                 import batch_transform as bt
                 self.batch_transform_fn = bt.batch_transform
                 self.augment_configs = prm.get('AUGMENT') # Store the list [['cutmix', 0.5, 0.3], ...]
-                print(f"Augmentation loaded: Augment={prm.get('AUGMENT')}"})
+                print(f"Augmentation loaded: Augment={prm.get('AUGMENT')}")
             except ImportError as e:
                 print(f"Failed to load transform: {e}")
         
