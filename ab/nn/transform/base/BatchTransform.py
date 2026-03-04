@@ -20,8 +20,7 @@ def batch_transform(inputs, labels, current_batch, total_batches, augment_config
             elif aug_type == 'mixup':
                 return apply_mixup(inputs, labels, alpha)
             elif aug_type == 'cutout':
-                # alpha is 'length' for cutout
-                return apply_cutout(inputs, labels, length=int(alpha) if alpha else 16)
+                return apply_cutout(inputs, labels, portion)
             else: # 'none' or unknown types
                 return inputs, labels, labels, 1.0
                 
@@ -64,29 +63,31 @@ def apply_mixup(inputs, labels, alpha):
 
 
 
-def apply_cutout(inputs, labels, length=16):
+def apply_cutout(inputs, labels, portion=0.1):
     """
-    Zeros out a random NxN square in each image
+    Zeros out a random square in each image.
+    portion: fraction of image side to cut (0.0 to 1.0)
     """
     h, w = inputs.shape[2], inputs.shape[3]
     batch_size = inputs.shape[0]
-    
+
+    length_h = int(h * portion)  # convert portion to pixels
+    length_w = int(w * portion)  # for non-square image
+
     # Generate random centers for each image in the batch
     y_centers = torch.randint(0, h, (batch_size,), device=inputs.device)
     x_centers = torch.randint(0, w, (batch_size,), device=inputs.device)
-    
 
     for i in range(batch_size):
         y = y_centers[i].item()
         x = x_centers[i].item()
-        
-        y1 = max(0, y - length // 2)
-        y2 = min(h, y + length // 2)
-        x1 = max(0, x - length // 2)
-        x2 = min(w, x + length // 2)
-      
+
+        y1 = max(0, y - length_h // 2)
+        y2 = min(h, y + length_h // 2)
+        x1 = max(0, x - length_w // 2)
+        x2 = min(w, x + length_w // 2)
+
         inputs[i, :, y1:y2, x1:x2] = 0.0
-    
 
     # lam=1.0 means original label, target_b is a copy
     return inputs, labels, labels, 1.0
