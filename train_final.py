@@ -18,11 +18,14 @@ if __name__ == '__main__':
 from ab.nn.train import main
 from ab.nn.util.Const import data_dir
 
-# ── UPDATE THESE with the best HPs found in Phase 1 logs ──────────────────────
-BEST_LR       = 0.001   # e.g. from: "Best trial lr=0.001"
-BEST_BATCH_PW = 6       # e.g. 6 means batch=64
-BEST_MOMENTUM = 0.90    # e.g. from: "Best trial momentum=0.90"
-BEST_DROPOUT  = 0.20    # e.g. from: "Best trial dropout=0.20"
+# ── Best HPs from Phase 1 Optuna search (30 trials x 50 epochs) ───────────────
+# Best result: MAE=0.1105 at epoch 2
+# Transform  : bf-v1-RandomCrop_RandomPosterize_RandomGrayscale
+BEST_LR        = 0.003997   # best trial lr
+BEST_BATCH_PW  = 6          # batch=64 (2^6)
+BEST_MOMENTUM  = 0.9044     # best trial momentum
+BEST_DROPOUT   = 0.1866     # best trial dropout
+BEST_TRANSFORM = ('bf-v1-RandomCrop_RandomPosterize_RandomGrayscale',)
 # ──────────────────────────────────────────────────────────────────────────────
 
 if __name__ == '__main__':
@@ -37,6 +40,7 @@ if __name__ == '__main__':
     print(f"Batch     : 2^{BEST_BATCH_PW} = {2**BEST_BATCH_PW}")
     print(f"Momentum  : {BEST_MOMENTUM}")
     print(f"Dropout   : {BEST_DROPOUT}")
+    print(f"Transform : {BEST_TRANSFORM[0]}")
     print("=" * 60)
 
     main(
@@ -51,6 +55,7 @@ if __name__ == '__main__':
         max_momentum=BEST_MOMENTUM,
         min_dropout=BEST_DROPOUT,
         max_dropout=BEST_DROPOUT,
+        transform=BEST_TRANSFORM,
         save_pth_weights=True,
         save_onnx_weights=1,
         num_workers=8,
