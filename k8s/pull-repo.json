@@ -21,7 +21,7 @@
             "imagePullPolicy": "Always",
             "command": ["/bin/bash", "-c"],
             "args": [
-              "set -e; cd /shared/ssd/home/b-a-kumar; if [ -d nn-dataset ]; then cd nn-dataset && git fetch origin && git checkout age-estimation-model && git pull origin age-estimation-model; else git clone --branch age-estimation-model https://github.com/Arun03k/nn-dataset.git; fi; echo 'Repository ready.'"
+              "set -e; export GIT_CONFIG_NOSYSTEM=1; export GIT_CONFIG_GLOBAL=/dev/null; cd /shared/ssd/home/b-a-kumar; if [ -d nn-dataset ]; then cd nn-dataset && git fetch origin && git checkout age-estimation-model && git pull origin age-estimation-model; else git clone --branch age-estimation-model https://github.com/Arun03k/nn-dataset.git; fi; echo 'Repository ready.'"
             ],
             "resources": {
               "requests": {
