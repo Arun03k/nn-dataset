@@ -156,7 +156,7 @@
         "total_ram_kb": 31936284.0,
         "train_accuracy": 0.0,
         "train_loss": 12.252625737282937,
-        "transform": "default",
+        "transform": "git_processor",
         "uid": "6054ea49a7a79b48d2720f62c92ea117"
     },
     {
@@ -220,7 +220,7 @@
         "total_ram_kb": 31936284.0,
         "train_accuracy": 0.0,
         "train_loss": 11.661443367711298,
-        "transform": "default",
+        "transform": "git_processor",
         "uid": "d8c741cc4088c3159bee23eb1f36e8bf"
     },
     {

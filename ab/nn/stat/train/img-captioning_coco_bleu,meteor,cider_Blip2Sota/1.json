@@ -92,7 +92,7 @@
         "total_ram_kb": 31936284.0,
         "train_accuracy": 0.0,
         "train_loss": null,
-        "transform": "default",
+        "transform": "blip2_processor",
         "uid": "44de68962d4c584237122603a96da87a"
     },
     {
