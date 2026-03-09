@@ -94,16 +94,17 @@ class Net(nn.Module):
         )
 
         # One-cycle LR: fast warmup (30% of epochs) then cosine decay.
-        # Consistently outperforms CosineAnnealingLR for regression on medium datasets.
+        # div_factor=3: start LR = max_lr/3 — avoids the acc=0 cold-start kill
+        # that happens when div_factor=10 and LR < ~1e-3 (start < 1e-4).
         self.scheduler = torch.optim.lr_scheduler.OneCycleLR(
             self.optimizer,
             max_lr=prm['lr'],
             epochs=self.epoch_max,
-            steps_per_epoch=1,       # we call scheduler once per epoch
-            pct_start=0.30,
+            steps_per_epoch=1,       # stepped once per epoch
+            pct_start=0.25,
             anneal_strategy='cos',
             cycle_momentum=False,
-            div_factor=10.0,         # start LR = max_lr / 10
+            div_factor=3.0,          # start LR = max_lr / 3  (was 10)
             final_div_factor=1e3,    # end LR  = max_lr / 1000
         )
 

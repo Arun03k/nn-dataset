@@ -66,8 +66,9 @@ if __name__ == '__main__':
         # Batch: 64–128 — larger batches stabilise AdamW on regression
         min_batch_binary_power=6,
         max_batch_binary_power=7,
-        # LR range tuned for AdamW (lower max than SGD)
-        min_learning_rate=1e-4,
+        # LR range for AdamW. Min raised to 5e-4 so OneCycleLR start
+        # (max_lr/div_factor = max_lr/3) stays above 1e-4 threshold.
+        min_learning_rate=5e-4,
         max_learning_rate=3e-3,
         # momentum unused by AdamW but kept for framework compatibility
         min_momentum=0.85,
