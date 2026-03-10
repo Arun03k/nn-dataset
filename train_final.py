@@ -22,13 +22,12 @@ from ab.nn.train import main
 from ab.nn.util.Const import data_dir
 
 # ── Best HPs from Phase 1 Optuna search (30 trials × 50 epochs) ───────────────
-# Update these after reviewing Phase 1 results.
-# Placeholder values below are reasonable AdamW starting points.
-# The optimizer switch (SGD → AdamW) means Phase-1 best HPs must be re-read.
-BEST_LR        = 0.001      # AdamW LR (typical sweet-spot: 5e-4 – 2e-3)
-BEST_BATCH_PW  = 6          # batch = 2^6 = 64
-BEST_MOMENTUM  = 0.90       # unused by AdamW; kept for framework compatibility
-BEST_DROPOUT   = 0.20       # head dropout
+# Trial 14 — best val acc = 0.6653 (~MAE 5.0 yrs @ 50 epochs)
+# All top-6 trials used Resize_ColorJit_Flip_Blur + batch=64
+BEST_LR        = 0.002454   # Trial 14: acc=0.6653 (lr range 0.0014–0.0028 swept)
+BEST_BATCH_PW  = 6          # batch = 2^6 = 64 (consistently best across top trials)
+BEST_MOMENTUM  = 0.8783     # Trial 14 (unused by AdamW; kept for framework compat)
+BEST_DROPOUT   = 0.3192     # Trial 14
 BEST_TRANSFORM = ('Resize_ColorJit_Flip_Blur',)   # face-aware 224×224 augmentation
 # ──────────────────────────────────────────────────────────────────────────────
 
