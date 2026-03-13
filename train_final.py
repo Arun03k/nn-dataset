@@ -48,9 +48,10 @@ if __name__ == '__main__':
     print(f"Transform : {BEST_TRANSFORM[0]}")
     print("=" * 60)
 
+    # Final training: longer schedule, force pretrained backbone, more workers
     main(
         config=config,
-        epoch_max=100,
+        epoch_max=150,                    # run longer (150 epochs) for fine-tuning
         n_optuna_trials=1,               # Single run — no HP search
         min_batch_binary_power=BEST_BATCH_PW,
         max_batch_binary_power=BEST_BATCH_PW,
@@ -63,8 +64,9 @@ if __name__ == '__main__':
         transform=BEST_TRANSFORM,
         save_pth_weights=True,
         save_onnx_weights=1,
-        num_workers=8,
-        epoch_limit_minutes=600,         # 10 hours max for 100 epochs
+        num_workers=multiprocessing.cpu_count() if hasattr(multiprocessing, 'cpu_count') else 8,
+        pretrained=1,                     # force ImageNet pretrained backbone
+        epoch_limit_minutes=1500,         # 25 hours max — increase for longer fine-tune
     )
 
     print("\n" + "=" * 60)
