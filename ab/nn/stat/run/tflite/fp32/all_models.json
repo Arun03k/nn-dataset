@@ -1023,6 +1023,990 @@
     "accuracy": 0.44,
     "transform": "bf-v1-RandomCrop_RandomAdjustSharpnes_RandomAutocontrast"
   },
+  "AirNext": {
+    "accuracy": 0.806,
+    "transform": "norm_256"
+  },
+  "FractalNet": {
+    "accuracy": 0.513,
+    "transform": "echo_flip"
+  },
+  "VGG": {
+    "accuracy": 0.849,
+    "transform": "norm_299"
+  },
+  "rag-130fd05c846ed045ffa9dcb831bee6d1": {
+    "accuracy": 0.48,
+    "transform": "echo_32_flip"
+  },
+  "rag-31dfd208dbcfd1d2c91c5bd88c71f00d": {
+    "accuracy": 0.349,
+    "transform": "echo_flip"
+  },
+  "rag-5e222e43fe44802d471db7e4899a8647": {
+    "accuracy": 0.342,
+    "transform": "echo"
+  },
+  "rag-689150994c99876862dca9c594c6af77": {
+    "accuracy": 0.359,
+    "transform": "bf-v1-RandomCrop_RandomAdjustSharpnes_6"
+  },
+  "rag-9367d9128c3eca4d227895849dc1d4e9": {
+    "accuracy": 0.346,
+    "transform": "echo_32"
+  },
+  "rag-b40f5b2d49311e36b11c39011cf65657": {
+    "accuracy": 0.796,
+    "transform": "bf-v1-Pad_RandomRotation_RandomAdjustSharpnes"
+  },
+  "rag-e2b21af0346c680dcd567029313453dd": {
+    "accuracy": 0.755,
+    "transform": "norm"
+  },
+  "rag-e8a7c298c4669fd22ae9ae0de4b93de3": {
+    "accuracy": 0.775,
+    "transform": "bf-v1-RandomEqualize_2"
+  },
+  "rag-ea2b568d6a3fa81b8827d8bd29c7a16d": {
+    "accuracy": 0.425,
+    "transform": "echo_32_flip"
+  },
+  "rag-fc485ab1df772617b46259f23eb5df57": {
+    "accuracy": 0.862,
+    "transform": "norm_flip"
+  },
+  "unq-004785a4e7bd45d8a1fd5ab1b3928d2d": {
+    "accuracy": 0.8,
+    "transform": "bf-v1-RandomRotation_RandomPosterize_5"
+  },
+  "unq-008e608361868a5e4b204c26881e6772": {
+    "accuracy": 0.104,
+    "transform": "bf-v1-RandomCrop_RandomRotation_RandomAutocontrast_256"
+  },
+  "unq-01b1a62ee9e3bab00da939ad92632cb2": {
+    "accuracy": 0.814,
+    "transform": "norm_128"
+  },
+  "unq-022ccf4ed3a69738bacdac6c5ddbcf39": {
+    "accuracy": 0.788,
+    "transform": "bf-v1-RandomHorizontalFlip_RandomPosterize_Pad"
+  },
+  "unq-02699491b9674d1f5225791fb5fb89ad": {
+    "accuracy": 0.503,
+    "transform": "bf-v1-RandomCrop_RandomAdjustSharpnes_RandomAutocontrast"
+  },
+  "unq-027df803370363c1b3981e7fe4dbcabb": {
+    "accuracy": 0.777,
+    "transform": "bf-v1-Pad_RandomRotation_RandomHorizontalFlip"
+  },
+  "unq-02bb2899f8a7f870aae7b0ee795b09a2": {
+    "accuracy": 0.253,
+    "transform": "bf-v1-CenterCrop_RandomSolarize_2"
+  },
+  "unq-05c5f9e6efed5ee2e8acb105201dd264": {
+    "accuracy": 0.859,
+    "transform": "bf-v1-RandomHorizontalFlip_RandomAdjustSharpnes_RandomPerspective"
+  },
+  "unq-06b0926a4863c658982eedee7619a2de": {
+    "accuracy": 0.756,
+    "transform": "bf-v1-RandomPosterize_RandomAdjustSharpnes_4"
+  },
+  "unq-07961872823dbca2cd9f28d9d07faf5b": {
+    "accuracy": 0.513,
+    "transform": "bf-v1-CenterCrop_RandomHorizontalFlip_2"
+  },
+  "unq-080504295d4b74034710c6ecb45c2e5c": {
+    "accuracy": 0.319,
+    "transform": "bf-v1-Pad_CenterCrop_RandomHorizontalFlip"
+  },
+  "unq-08749704a2ca8b06b1fd40d7b6b0c492": {
+    "accuracy": 0.855,
+    "transform": "norm_299"
+  },
+  "unq-08be035c0d8dc059a25e1e7f5e473bed": {
+    "accuracy": 0.764,
+    "transform": "bf-v1-RandomSolarize_41"
+  },
+  "unq-09407fd6fcc1a6c6438a2ed6edabf794": {
+    "accuracy": 0.817,
+    "transform": "bf-v1-RandomHorizontalFlip_Pad_RandomPosterize"
+  },
+  "unq-0943658df650c81ec90e4403b7e776d2": {
+    "accuracy": 0.593,
+    "transform": "bf-v1-RandomCrop_RandomAutocontrast_3"
+  },
+  "unq-0cc24bc6647e457d8a705d75c3f23195": {
+    "accuracy": 0.0,
+    "transform": "bf-v1-RandomHorizontalFlip_GaussianBlur_3"
+  },
+  "unq-0ef36979eccfba6e376ce5eaed61fb92": {
+    "accuracy": 0.658,
+    "transform": "bf-v1-RandomHorizontalFlip_Pad_RandomAdjustSharpnes"
+  },
+  "unq-0f3392bad656dcbce2a1fef8ab05e20b": {
+    "accuracy": 0.26,
+    "transform": "bf-v1-RandomHorizontalFlip_Pad_CenterCrop"
+  },
+  "unq-0fded6b4eb01998da380499f6e8f7194": {
+    "accuracy": 0.339,
+    "transform": "bf-v1-CenterCrop_RandomPosterize_5"
+  },
+  "unq-11580d86fce85328c35432b29a152d0a": {
+    "accuracy": 0.865,
+    "transform": "norm_256_flip"
+  },
+  "unq-12dbe154dc3a49c9a7c578c8e7150d95": {
+    "accuracy": 0.73,
+    "transform": "bf-v1-Pad_RandomAutocontrast_RandomAdjustSharpnes"
+  },
+  "unq-1364972464b5cdf3df77aa1cdb0fcae6": {
+    "accuracy": 0.394,
+    "transform": "bf-v1-RandomRotation_CenterCrop_6"
+  },
+  "unq-13edbe34d165a7096d572c55abadac09": {
+    "accuracy": 0.517,
+    "transform": "bf-v1-RandomPerspective_RandomCrop"
+  },
+  "unq-181120193bd2af9bc87260b3d9060ac2": {
+    "accuracy": 0.821,
+    "transform": "bf-v1-RandomAutocontrast_RandomHorizontalFlip"
+  },
+  "unq-18bd7a0aa765f463ab2a3595200bc7a8": {
+    "accuracy": 0.772,
+    "transform": "bf-v1-RandomPosterize_RandomAdjustSharpnes_4"
+  },
+  "unq-18e19c50aa14c2a72b8a44403208644f": {
+    "accuracy": 0.723,
+    "transform": "bf-v1-Pad_RandomGrayscale"
+  },
+  "unq-193927063ebb20c5b1690b066788642f": {
+    "accuracy": 0.501,
+    "transform": "echo"
+  },
+  "unq-194a5bd7097b03ef02abb1d30841f830": {
+    "accuracy": 0.858,
+    "transform": "bf-v1-RandomAutocontrast_RandomAdjustSharpnes_256"
+  },
+  "unq-1a4e51ab54cd7b7d51571eda6bcb7e6f": {
+    "accuracy": 0.832,
+    "transform": "bf-v1-RandomPerspective_RandomAutocontrast_2"
+  },
+  "unq-1b17fbfae3532a35b92d8775490dd3ef": {
+    "accuracy": 0.844,
+    "transform": "bf-v1-RandomAdjustSharpnes_Pad_4"
+  },
+  "unq-1c2a52e122f9636dcf0c791ffcba6677": {
+    "accuracy": 0.83,
+    "transform": "bf-v1-Pad_RandomAdjustSharpnes_5"
+  },
+  "unq-1ecbcf96533a04ce3dca1e9a574640a2": {
+    "accuracy": 0.775,
+    "transform": "norm_flip"
+  },
+  "unq-1f7644c1bb3c846a6f5ad8168172b877": {
+    "accuracy": 0.799,
+    "transform": "norm_32"
+  },
+  "unq-20448d69fb48c3ff9845f6d1bf012573": {
+    "accuracy": 0.785,
+    "transform": "bf-v1-RandomGrayscale_Pad_5"
+  },
+  "unq-208a6abe072b2fe836bcf203bd5e4c89": {
+    "accuracy": 0.85,
+    "transform": "norm_32_flip"
+  },
+  "unq-21111a3a0404e4bddaf0bbe5919ff289": {
+    "accuracy": 0.864,
+    "transform": "bf-v1-Pad_RandomRotation_RandomAdjustSharpnes"
+  },
+  "unq-2140bab97cf947e17aee9fc6cfd25e76": {
+    "accuracy": 0.83,
+    "transform": "bf-v1-RandomHorizontalFlip_RandomPosterize_RandomPerspective"
+  },
+  "unq-21dea7ab14ad4c11b2a35a170108c75a": {
+    "accuracy": 0.798,
+    "transform": "bf-v1-RandomAdjustSharpnes_RandomPerspective_3"
+  },
+  "unq-2234b5feadac1d9ec93cc15d04459587": {
+    "accuracy": 0.534,
+    "transform": "bf-v1-RandomCrop_RandomAdjustSharpnes_Pad"
+  },
+  "unq-23dadac4e364ae0ef93ba53327693087": {
+    "accuracy": 0.571,
+    "transform": "bf-v1-RandomCrop_Pad_4"
+  },
+  "unq-244f73bd51c83f135ac800623bbcf059": {
+    "accuracy": 0.827,
+    "transform": "bf-v1-RandomAdjustSharpnes_RandomPosterize"
+  },
+  "unq-26421b5a590f0d8af0b54ea3d835e499": {
+    "accuracy": 0.506,
+    "transform": "bf-v1-RandomCrop_CenterCrop_5"
+  },
+  "unq-2985d6f8ea6094f3f84d3fcdbe9fa229": {
+    "accuracy": 0.647,
+    "transform": "bf-v1-CenterCrop_RandomAutocontrast_Pad"
+  },
+  "unq-299ad43744d7a2cd31c2c8e9e95f480a": {
+    "accuracy": 0.855,
+    "transform": "bf-v1-RandomAdjustSharpnes_RandomEqualize_3"
+  },
+  "unq-29acd6d2509f5154752a0405520001b6": {
+    "accuracy": 0.821,
+    "transform": "bf-v1-RandomPosterize_RandomAdjustSharpnes_4"
+  },
+  "unq-2a27568503a81c7d51231880e3633cc0": {
+    "accuracy": 0.46,
+    "transform": "bf-v1-RandomCrop_RandomPosterize"
+  },
+  "unq-2a7e05857298f60670019215f9c6befc": {
+    "accuracy": 0.849,
+    "transform": "norm"
+  },
+  "unq-2c38e90468ba01301c47f1fa58f7b0e6": {
+    "accuracy": 0.575,
+    "transform": "bf-v1-RandomCrop_RandomAdjustSharpnes_RandomAutocontrast"
+  },
+  "unq-2d021f87004d11187e1ce09b63e717bd": {
+    "accuracy": 0.847,
+    "transform": "bf-v1-RandomGrayscale_Pad_5"
+  },
+  "unq-2d0b95855d559d0369180f47179ecd98": {
+    "accuracy": 0.409,
+    "transform": "bf-v1-RandomCrop_Pad_RandomHorizontalFlip"
+  },
+  "unq-2f7971ffc1195327a556c00969cfa355": {
+    "accuracy": 0.852,
+    "transform": "bf-v1-RandomAdjustSharpnes_Pad_4"
+  },
+  "unq-30919bd561396e89468bf6fd0874b00a": {
+    "accuracy": 0.803,
+    "transform": "norm_32"
+  },
+  "unq-31487d89b54977166ef41a32af80b81f": {
+    "accuracy": 0.855,
+    "transform": "norm_flip"
+  },
+  "unq-3290d9652f0de8f772f03b8175beda06": {
+    "accuracy": 0.886,
+    "transform": "bf-v1-RandomSolarize_RandomHorizontalFlip_5"
+  },
+  "unq-330b988b3de04194d45aa22a2ec56348": {
+    "accuracy": 0.835,
+    "transform": "norm_256_flip"
+  },
+  "unq-331fa4196e403e23104bd63d5dd0d938": {
+    "accuracy": 0.492,
+    "transform": "bf-v1-CenterCrop_RandomGrayscale_6"
+  },
+  "unq-3371cdac424d20b30da60520a1dc084f": {
+    "accuracy": 0.325,
+    "transform": "bf-v1-RandomRotation_CenterCrop_6"
+  },
+  "unq-33897d2a97eda5f8f58fc794aef2fbcc": {
+    "accuracy": 0.391,
+    "transform": "bf-v1-RandomPosterize_RandomCrop_4"
+  },
+  "unq-33eda96bddf323ef52ac6d9249442f5d": {
+    "accuracy": 0.374,
+    "transform": "bf-v1-RandomCrop_CenterCrop_5"
+  },
+  "unq-35ddb6228ee3528bf093ec3c3b0b719f": {
+    "accuracy": 0.849,
+    "transform": "bf-v1-RandomHorizontalFlip_RandomAdjustSharpnes_3"
+  },
+  "unq-36454ff1a9188b3fceefe6de74ecb62a": {
+    "accuracy": 0.36,
+    "transform": "bf-v1-Pad_RandomPosterize_CenterCrop"
+  },
+  "unq-3825cb7a6841821539a644bc4c5bfbb2": {
+    "accuracy": 0.869,
+    "transform": "bf-v1-RandomHorizontalFlip_RandomAutocontrast_RandomAdjustSharpnes"
+  },
+  "unq-3a1bf62e0b760946619fe97190801fa7": {
+    "accuracy": 0.84,
+    "transform": "norm_32_flip"
+  },
+  "unq-3a81b807d37b6656f7da11c7b289e87e": {
+    "accuracy": 0.484,
+    "transform": "bf-v1-RandomCrop_RandomAdjustSharpnes_RandomAutocontrast"
+  },
+  "unq-3b288a2bc33185b5c18197777723064b": {
+    "accuracy": 0.82,
+    "transform": "norm_299"
+  },
+  "unq-3c100dc28f4e080275b0892002c6fc50": {
+    "accuracy": 0.217,
+    "transform": "echo_64_flip"
+  },
+  "unq-3c8a605171a14775ce9f1a007ea04af4": {
+    "accuracy": 0.85,
+    "transform": "bf-v1-RandomHorizontalFlip_5"
+  },
+  "unq-3cb499be11024851c43d924847c0c928": {
+    "accuracy": 0.371,
+    "transform": "bf-v1-CenterCrop_RandomRotation_RandomHorizontalFlip"
+  },
+  "unq-3e37ca2c6932f9477210dcb8aa8fd790": {
+    "accuracy": 0.427,
+    "transform": "bf-v1-RandomCrop_RandomRotation_RandomAutocontrast"
+  },
+  "unq-3ed2d2b57335bc17d1f166fca82586c8": {
+    "accuracy": 0.749,
+    "transform": "bf-v1-Pad_RandomAdjustSharpnes_RandomPosterize"
+  },
+  "unq-3f66520acb0e26a96da2eb50eb3fbba7": {
+    "accuracy": 0.831,
+    "transform": "bf-v1-RandomHorizontalFlip_RandomAutocontrast_RandomGrayscale"
+  },
+  "unq-40384330e2ee1882ba7eb57fadf90ed7": {
+    "accuracy": 0.859,
+    "transform": "bf-v1-Pad_RandomAdjustSharpnes_RandomHorizontalFlip"
+  },
+  "unq-40bd872a519d66c462726d231b643cb0": {
+    "accuracy": 0.806,
+    "transform": "bf-v1-RandomSolarize_RandomHorizontalFlip_5"
+  },
+  "unq-4433192e90db416e6399d5c8d1da12e6": {
+    "accuracy": 0.376,
+    "transform": "bf-v1-RandomHorizontalFlip_RandomCrop_4"
+  },
+  "unq-4521da97d1dc311a35420a5c537a01f3": {
+    "accuracy": 0.223,
+    "transform": "bf-v1-CenterCrop_RandomAutocontrast_Pad"
+  },
+  "unq-453497ddf2195e8205616b1dec888a8f": {
+    "accuracy": 0.493,
+    "transform": "bf-v1-RandomHorizontalFlip_CenterCrop_Pad"
+  },
+  "unq-4814a415bb26e270e7e85500e4a8388a": {
+    "accuracy": 0.781,
+    "transform": "bf-v1-RandomRotation_Pad_2"
+  },
+  "unq-48a7d0d13ea6b9aba6df8a31b19923d2": {
+    "accuracy": 0.825,
+    "transform": "bf-v1-RandomHorizontalFlip_5"
+  },
+  "unq-48a9f3ce547fd2d63964f729d0fb7e0f": {
+    "accuracy": 0.415,
+    "transform": "bf-v1-RandomCrop_RandomAdjustSharpnes_6"
+  },
+  "unq-49291e01b6f89d6cb8ca85fea054fbb5": {
+    "accuracy": 0.29,
+    "transform": "echo_256_flip"
+  },
+  "unq-49dc447da2e1d85eba8b9fda5b6aafd7": {
+    "accuracy": 0.542,
+    "transform": "bf-v1-RandomPosterize_RandomCrop_4"
+  },
+  "unq-4b4f0f7370f28cb5b684f57fa853aa63": {
+    "accuracy": 0.783,
+    "transform": "bf-v1-Pad_RandomRotation_RandomHorizontalFlip"
+  },
+  "unq-4b5c19886e8a0c8e089f99b219dfe933": {
+    "accuracy": 0.584,
+    "transform": "echo_64"
+  },
+  "unq-4dc56caafa50addd44a6437962bad17f": {
+    "accuracy": 0.804,
+    "transform": "bf-v1-RandomEqualize_RandomAdjustSharpnes_2"
+  },
+  "unq-4f4d9128cf0be4c99b62f0bafcb23938": {
+    "accuracy": 0.792,
+    "transform": "bf-v1-Pad_RandomRotation_RandomHorizontalFlip"
+  },
+  "unq-4fb6e9e01eaeda480ff79a394b25fb7e": {
+    "accuracy": 0.306,
+    "transform": "bf-v1-RandomRotation_CenterCrop_6"
+  },
+  "unq-523b5bf081fb275d22638ec65192b7af": {
+    "accuracy": 0.59,
+    "transform": "bf-v1-RandomResizedCrop_65"
+  },
+  "unq-525164b7003c99b1f5632de51522eaf7": {
+    "accuracy": 0.798,
+    "transform": "bf-v1-RandomHorizontalFlip_RandomAdjustSharpnes_Pad"
+  },
+  "unq-52742ec8a55cd341ab681acf93651378": {
+    "accuracy": 0.518,
+    "transform": "bf-v1-RandomEqualize_CenterCrop_4"
+  },
+  "unq-52d5798ba4efb16ebdb587a2148434a1": {
+    "accuracy": 0.379,
+    "transform": "bf-v1-RandomCrop_RandomHorizontalFlip_5"
+  },
+  "unq-55756800bef2ab5ab7e0c3feae2b4c98": {
+    "accuracy": 0.258,
+    "transform": "bf-v1-CenterCrop_Pad_RandomAutocontrast"
+  },
+  "unq-55d1f5b6c7e5d0c2c146439ac4611388": {
+    "accuracy": 0.86,
+    "transform": "bf-v1-RandomHorizontalFlip_RandomAutocontrast"
+  },
+  "unq-561bdf14dd13b4b4bd40fefa2414edf2": {
+    "accuracy": 0.668,
+    "transform": "bf-v1-RandomCrop_RandomAdjustSharpnes_RandomAutocontrast"
+  },
+  "unq-56816a1f56f48ded972127e0a5636b32": {
+    "accuracy": 0.093,
+    "transform": "bf-v1-RandomAdjustSharpnes_CenterCrop"
+  },
+  "unq-580ee26b07f6dfa541c82ba7c8e0e520": {
+    "accuracy": 0.846,
+    "transform": "bf-v1-RandomAdjustSharpnes_RandomPerspective_3"
+  },
+  "unq-582625d46219dfcc9ec3130e4c0dca00": {
+    "accuracy": 0.767,
+    "transform": "bf-v1-RandomPosterize_RandomAdjustSharpnes_4"
+  },
+  "unq-5ca63205567e8efb3c6560b821e7872a": {
+    "accuracy": 0.448,
+    "transform": "bf-v1-RandomPosterize_RandomCrop_4"
+  },
+  "unq-5d1e514d09d1eb0da9cae190e38e5f0d": {
+    "accuracy": 0.496,
+    "transform": "bf-v1-CenterCrop_RandomHorizontalFlip_2"
+  },
+  "unq-5e5bd7f3e790ba1b2d0ecde92f2f5c8c": {
+    "accuracy": 0.247,
+    "transform": "bf-v1-RandomCrop_Pad_RandomPosterize"
+  },
+  "unq-5f518f948bdb13be5dee7ed902cbf6c3": {
+    "accuracy": 0.445,
+    "transform": "echo_32_flip"
+  },
+  "unq-60f4702f2085bd27eda5c09168cdbeba": {
+    "accuracy": 0.501,
+    "transform": "bf-v1-CenterCrop_Pad_RandomHorizontalFlip"
+  },
+  "unq-617bbe26f3202223cbaa66ac640c600c": {
+    "accuracy": 0.819,
+    "transform": "norm"
+  },
+  "unq-62c4c2db449411c0d0ba1e3689f6bef2": {
+    "accuracy": 0.443,
+    "transform": "bf-v1-CenterCrop_RandomGrayscale_6"
+  },
+  "unq-62ec82b0a764d1438b5a80b91688038a": {
+    "accuracy": 0.851,
+    "transform": "bf-v1-RandomAdjustSharpnes_RandomHorizontalFlip"
+  },
+  "unq-63dd86effc0f456826cab9840fcfd8b7": {
+    "accuracy": 0.853,
+    "transform": "bf-v1-RandomHorizontalFlip_RandomAutocontrast"
+  },
+  "unq-64d6332ddd13174da9c7f3b752053fa8": {
+    "accuracy": 0.349,
+    "transform": "bf-v1-RandomCrop_RandomPosterize"
+  },
+  "unq-65033a2920f09c954ed44ddff3164e23": {
+    "accuracy": 0.796,
+    "transform": "bf-v1-Pad_RandomRotation_RandomAdjustSharpnes"
+  },
+  "unq-6506610bd5410d8f822c7a91599dec58": {
+    "accuracy": 0.364,
+    "transform": "bf-v1-RandomAutocontrast_CenterCrop"
+  },
+  "unq-65b0dd82edb0f02317bba3452ce05e9b": {
+    "accuracy": 0.596,
+    "transform": "bf-v1-RandomCrop_RandomAdjustSharpnes_RandomAutocontrast"
+  },
+  "unq-67eb758337d9dde5a9e8d9aa66bd3e8c": {
+    "accuracy": 0.864,
+    "transform": "bf-v1-RandomGrayscale_RandomHorizontalFlip_4"
+  },
+  "unq-69eec770237747fcd2a72f69b919cb4f": {
+    "accuracy": 0.318,
+    "transform": "bf-v1-CenterCrop_RandomPosterize_RandomRotation"
+  },
+  "unq-6a2e4be939e71744ee4cc98e22faabf1": {
+    "accuracy": 0.671,
+    "transform": "bf-v1-Pad_RandomPosterize_RandomAutocontrast"
+  },
+  "unq-6c087b3d1afeb2be0a972b567eaeccfa": {
+    "accuracy": 0.808,
+    "transform": "bf-v1-Pad_RandomHorizontalFlip_5"
+  },
+  "unq-6dc5f176a6daa04b809522cc92bc2d92": {
+    "accuracy": 0.792,
+    "transform": "bf-v1-Pad_RandomPosterize_RandomPerspective"
+  },
+  "unq-7147688969f415377654488a79fdbcc5": {
+    "accuracy": 0.538,
+    "transform": "bf-v1-RandomCrop_RandomPosterize_RandomGrayscale"
+  },
+  "unq-7178fa21e7324805cd0e1201f94a4562": {
+    "accuracy": 0.864,
+    "transform": "bf-v1-RandomHorizontalFlip_RandomPosterize_RandomAdjustSharpnes"
+  },
+  "unq-71f45a70e804ad09e5a321f51e28d8be": {
+    "accuracy": 0.841,
+    "transform": "bf-v1-RandomHorizontalFlip_RandomAutocontrast"
+  },
+  "unq-7291a6e9b9af3727643f3c53353f7b0d": {
+    "accuracy": 0.812,
+    "transform": "bf-v1-RandomAdjustSharpnes_RandomGrayscale_2"
+  },
+  "unq-73128b1d6647d083cb1aef1fd30c576a": {
+    "accuracy": 0.438,
+    "transform": "bf-v1-Pad_CenterCrop"
+  },
+  "unq-75098bae371b5bb6a89402f671e9c165": {
+    "accuracy": 0.89,
+    "transform": "bf-v1-Pad_RandomHorizontalFlip_RandomAffine"
+  },
+  "unq-75444d08658a25313f4fc38f8b248511": {
+    "accuracy": 0.607,
+    "transform": "bf-v1-Pad_RandomAutocontrast_RandomAdjustSharpnes"
+  },
+  "unq-7983e9d83f37a4b3d608b40b6f249e2b": {
+    "accuracy": 0.812,
+    "transform": "bf-v1-RandomEqualize_Pad_5"
+  },
+  "unq-7b6a58ebabfe7e3869602874684d32a4": {
+    "accuracy": 0.142,
+    "transform": "echo_256_flip"
+  },
+  "unq-7bafe90ce225493a95cee9cadfc67bec": {
+    "accuracy": 0.799,
+    "transform": "bf-v1-RandomAutocontrast_RandomAdjustSharpnes_5"
+  },
+  "unq-7bc36ab51315e1868ce20f335458b1a2": {
+    "accuracy": 0.215,
+    "transform": "echo_256"
+  },
+  "unq-7c917f07fe634b63c455e26bb345c999": {
+    "accuracy": 0.458,
+    "transform": "bf-v1-RandomHorizontalFlip_RandomCrop_4"
+  },
+  "unq-7de93ccb271608eeb59376437b339cdc": {
+    "accuracy": 0.767,
+    "transform": "bf-v1-RandomAdjustSharpnes_RandomRotation_3"
+  },
+  "unq-7e589fb4aae9ea6567bcaab45a3ab610": {
+    "accuracy": 0.817,
+    "transform": "norm_256"
+  },
+  "unq-7e97410d7aa223a838ce4879c948f88c": {
+    "accuracy": 0.808,
+    "transform": "bf-v1-RandomPosterize_RandomAutocontrast"
+  },
+  "unq-7f2d946b92f73bf3c14c8445ee2f5c6b": {
+    "accuracy": 0.123,
+    "transform": "bf-v1-RandomCrop_RandomRotation_RandomAutocontrast_256"
+  },
+  "unq-7fd93783cbea58ad0b62bfbc1e522cd9": {
+    "accuracy": 0.196,
+    "transform": "echo_256"
+  },
+  "unq-80283cbe19c1af3d9038555cd1e4616d": {
+    "accuracy": 0.448,
+    "transform": "echo"
+  },
+  "unq-803164beef82450f367e6cd42fdf873d": {
+    "accuracy": 0.787,
+    "transform": "bf-v1-Pad_RandomPosterize_RandomHorizontalFlip"
+  },
+  "unq-811700a75c19de6ab0c05aac86862eb2": {
+    "accuracy": 0.803,
+    "transform": "bf-v1-Pad_RandomAdjustSharpnes_RandomAutocontrast"
+  },
+  "unq-81c668e2db2a2a775c528dfa075218ac": {
+    "accuracy": 0.099,
+    "transform": "echo_64"
+  },
+  "unq-8219ec921cbaf0066d394158c26522e7": {
+    "accuracy": 0.875,
+    "transform": "bf-v1-RandomHorizontalFlip_RandomPosterize_RandomAutocontrast"
+  },
+  "unq-8279107cd7a6505bd309bd16a396427c": {
+    "accuracy": 0.854,
+    "transform": "bf-v1-Pad_RandomAdjustSharpnes_RandomHorizontalFlip"
+  },
+  "unq-828012c23727bd1244fbfa6a0b6b162a": {
+    "accuracy": 0.584,
+    "transform": "bf-v1-CenterCrop_22"
+  },
+  "unq-82ead416895d8c10410ac41ef2fa6565": {
+    "accuracy": 0.781,
+    "transform": "bf-v1-RandomHorizontalFlip_Pad_RandomPosterize"
+  },
+  "unq-85a186ab6e681fa3cd1f4bf776f883db": {
+    "accuracy": 0.841,
+    "transform": "bf-v1-RandomAutocontrast_RandomAdjustSharpnes_5"
+  },
+  "unq-86bec9e6774c164e2d8c11353962e2f3": {
+    "accuracy": 0.428,
+    "transform": "bf-v1-Pad_RandomCrop_5"
+  },
+  "unq-86e5c1a8dc890dad7a02e35d69cb2be5": {
+    "accuracy": 0.78,
+    "transform": "norm"
+  },
+  "unq-896df1df44760a2cd22443a424877562": {
+    "accuracy": 0.512,
+    "transform": "bf-v1-CenterCrop_RandomRotation_RandomHorizontalFlip"
+  },
+  "unq-89c68f381fe025feace862631b8d3af7": {
+    "accuracy": 0.801,
+    "transform": "bf-v1-Pad_RandomHorizontalFlip_5"
+  },
+  "unq-8a5e1b87f2a1f1bdae8e06462f4f00ee": {
+    "accuracy": 0.812,
+    "transform": "bf-v1-RandomRotation_Pad_2"
+  },
+  "unq-8b28418a45a96a4da1791d6b3055be40": {
+    "accuracy": 0.375,
+    "transform": "echo_32"
+  },
+  "unq-8b619ee5d1d78987548be04c53661bd2": {
+    "accuracy": 0.323,
+    "transform": "bf-v1-RandomPosterize_CenterCrop_4"
+  },
+  "unq-8c319bd5fe43767566aca9bb3217bd8c": {
+    "accuracy": 0.851,
+    "transform": "bf-v1-RandomRotation_RandomPosterize_5"
+  },
+  "unq-8cd3d0e4da9a428582fb8263bce15813": {
+    "accuracy": 0.87,
+    "transform": "bf-v1-RandomPerspective_103"
+  },
+  "unq-8d8ed7f603fd8e8741cf92a273af59b2": {
+    "accuracy": 0.861,
+    "transform": "norm_64_flip"
+  },
+  "unq-8e3045d522e554694e56bce9f5e84eb2": {
+    "accuracy": 0.85,
+    "transform": "bf-v1-RandomHorizontalFlip_RandomPosterize_RandomAutocontrast"
+  },
+  "unq-8e56df92e758f3b8a87f9276dee3142a": {
+    "accuracy": 0.861,
+    "transform": "bf-v1-RandomHorizontalFlip_RandomAutocontrast_Pad"
+  },
+  "unq-8ee1cbf8901e71e97b9dd2484e684504": {
+    "accuracy": 0.323,
+    "transform": "bf-v1-CenterCrop_RandomRotation_RandomHorizontalFlip"
+  },
+  "unq-907d106de77561b67b0bf67a4ac81709": {
+    "accuracy": 0.385,
+    "transform": "bf-v1-RandomCrop_RandomHorizontalFlip_5"
+  },
+  "unq-90acca8c56e33e6eccc99b6d0334ae1c": {
+    "accuracy": 0.691,
+    "transform": "bf-v1-Pad_RandomRotation"
+  },
+  "unq-9132eabb5746c08de319d912cc8abc56": {
+    "accuracy": 0.815,
+    "transform": "bf-v1-Grayscale_RandomAdjustSharpnes_2"
+  },
+  "unq-91eb5a833ca89969e42efdcef6aaa132": {
+    "accuracy": 0.568,
+    "transform": "bf-v1-RandomCrop_CenterCrop_RandomAutocontrast"
+  },
+  "unq-92793ca5cd9655f790378adfb5982dbe": {
+    "accuracy": 0.762,
+    "transform": "bf-v1-Pad_RandomGrayscale"
+  },
+  "unq-957cc67a1df4a413b7351631b9fddd1b": {
+    "accuracy": 0.823,
+    "transform": "bf-v1-RandomAdjustSharpnes_Pad_4"
+  },
+  "unq-95ab2716b83380f6fa5034db173676e3": {
+    "accuracy": 0.184,
+    "transform": "echo_299_flip"
+  },
+  "unq-9617b26aa880c638fe1c4bef5ce307e4": {
+    "accuracy": 0.482,
+    "transform": "bf-v1-RandomHorizontalFlip_CenterCrop_Pad"
+  },
+  "unq-97d76fa59a90f8dbfc5fc31c7c842e4a": {
+    "accuracy": 0.526,
+    "transform": "bf-v1-CenterCrop_RandomRotation_2"
+  },
+  "unq-9a7fa9ba3e3bb6f92eeedd6028aa6cf6": {
+    "accuracy": 0.824,
+    "transform": "bf-v1-Pad_RandomEqualize_2"
+  },
+  "unq-9c59e3a42072bd4f67435b32be60ad12": {
+    "accuracy": 0.841,
+    "transform": "bf-v1-RandomPerspective_RandomAdjustSharpnes_6"
+  },
+  "unq-9dd5fd0bb1750a42045ed3c605f7dfee": {
+    "accuracy": 0.822,
+    "transform": "bf-v1-Pad_38"
+  },
+  "unq-9f7fcc14175c38c1c5f0e6b819d7f2d0": {
+    "accuracy": 0.709,
+    "transform": "bf-v1-Pad_RandomPosterize_RandomAutocontrast"
+  },
+  "unq-a1140b21d1f8b7bbc7babb3c64061d82": {
+    "accuracy": 0.799,
+    "transform": "bf-v1-Grayscale_50"
+  },
+  "unq-a1fbe61bdc24824365d48aa6b45ddafb": {
+    "accuracy": 0.365,
+    "transform": "bf-v1-RandomCrop_RandomPerspective"
+  },
+  "unq-a453dc35bf1e6a5024fb752ce3d58cf7": {
+    "accuracy": 0.887,
+    "transform": "norm_256_flip"
+  },
+  "unq-a5b56058f59a0c7fa17d79aa49e31f17": {
+    "accuracy": 0.395,
+    "transform": "bf-v1-Pad_RandomPosterize_CenterCrop"
+  },
+  "unq-a66e1a455c4641e83735c897ae58c1ae": {
+    "accuracy": 0.864,
+    "transform": "bf-v1-RandomEqualize_RandomAdjustSharpnes_2"
+  },
+  "unq-a688c894a64d51833b5efe8ebf9a3882": {
+    "accuracy": 0.161,
+    "transform": "bf-v1-RandomHorizontalFlip_RandomCrop_Pad"
+  },
+  "unq-a7afbb2ca1a699049a2bbd65b8eb1dd9": {
+    "accuracy": 0.752,
+    "transform": "bf-v1-RandomHorizontalFlip_RandomPosterize_Pad"
+  },
+  "unq-a82ea82b49f4aa9c70607c11c8200a35": {
+    "accuracy": 0.802,
+    "transform": "bf-v1-Pad_RandomEqualize_RandomAdjustSharpnes"
+  },
+  "unq-a853e1974586a317350cf0add60ab339": {
+    "accuracy": 0.805,
+    "transform": "bf-v1-RandomAdjustSharpnes_Pad_4"
+  },
+  "unq-a9c8010f730781cfd0e6dda8ff4498a5": {
+    "accuracy": 0.757,
+    "transform": "bf-v1-RandomHorizontalFlip_Pad_RandomSolarize"
+  },
+  "unq-aa463ce0470c90b9b742a0eae524765c": {
+    "accuracy": 0.775,
+    "transform": "bf-v1-Pad_RandomEqualize_RandomAdjustSharpnes"
+  },
+  "unq-aad767e20870662bfdfe441711f039ba": {
+    "accuracy": 0.872,
+    "transform": "bf-v1-RandomPosterize_RandomAdjustSharpnes_4"
+  },
+  "unq-aec7153a5223f1f8396122b14c1105da": {
+    "accuracy": 0.894,
+    "transform": "norm_flip"
+  },
+  "unq-aee0bbf835e392de67dcc39a19b26608": {
+    "accuracy": 0.785,
+    "transform": "bf-v1-Pad_RandomAdjustSharpnes_5"
+  },
+  "unq-af281097ad4a7f5245085e214ec85da1": {
+    "accuracy": 0.62,
+    "transform": "bf-v1-CenterCrop_22"
+  },
+  "unq-af402b352fecb0381ff183494aba77c5": {
+    "accuracy": 0.788,
+    "transform": "norm_64"
+  },
+  "unq-af71d6bf16dd28d1023587c1ba5d1959": {
+    "accuracy": 0.821,
+    "transform": "bf-v1-Pad_RandomRotation_RandomAdjustSharpnes"
+  },
+  "unq-affd5d25776f946b255884c3e8231946": {
+    "accuracy": 0.752,
+    "transform": "bf-v1-RandomPosterize_58"
+  },
+  "unq-b017f334654b6f8b61635b670dccb1f1": {
+    "accuracy": 0.832,
+    "transform": "bf-v1-RandomAdjustSharpnes_RandomAutocontrast"
+  },
+  "unq-b030a4319d3f055e44063097726108a5": {
+    "accuracy": 0.157,
+    "transform": "echo_flip"
+  },
+  "unq-b045ef1033845612e4177533332e2c04": {
+    "accuracy": 0.866,
+    "transform": "bf-v1-RandomPosterize_RandomHorizontalFlip_6"
+  },
+  "unq-b0dbef43a9f9aadfd649600e5f8da801": {
+    "accuracy": 0.436,
+    "transform": "bf-v1-CenterCrop_RandomPosterize_RandomRotation"
+  },
+  "unq-b22cf9ca110271ee23f1c3326d2b3e57": {
+    "accuracy": 0.812,
+    "transform": "bf-v1-RandomPerspective_103"
+  },
+  "unq-b2b6ce4b5405e0acb1c5bd98fb532e86": {
+    "accuracy": 0.399,
+    "transform": "bf-v1-RandomCrop_82"
+  },
+  "unq-b2d49c1c697ec66c2180eb2661bdf040": {
+    "accuracy": 0.394,
+    "transform": "bf-v1-RandomCrop_Pad_RandomPosterize"
+  },
+  "unq-b3cc057a2464dd26782432b52ca18763": {
+    "accuracy": 0.353,
+    "transform": "bf-v1-RandomAutocontrast_CenterCrop"
+  },
+  "unq-b5afb0121cf5d63383ac37d1738fb164": {
+    "accuracy": 0.554,
+    "transform": "bf-v1-RandomAdjustSharpnes_CenterCrop"
+  },
+  "unq-b7bfccba4c9e789fe4eba01c20072e7a": {
+    "accuracy": 0.767,
+    "transform": "bf-v1-RandomSolarize_Pad"
+  },
+  "unq-b9301efe5400840d762a70d888c76d35": {
+    "accuracy": 0.503,
+    "transform": "echo_64_flip"
+  },
+  "unq-ba8a37171de6dadd6d36ccb0056f5b20": {
+    "accuracy": 0.776,
+    "transform": "bf-v1-RandomAdjustSharpnes"
+  },
+  "unq-bc24fbcdf297563af0980be205a8d534": {
+    "accuracy": 0.85,
+    "transform": "bf-v1-RandomPosterize_RandomAutocontrast"
+  },
+  "unq-bc69407926f1930e9ca671cee9830851": {
+    "accuracy": 0.801,
+    "transform": "bf-v1-RandomPosterize_RandomAdjustSharpnes_4"
+  },
+  "unq-bcc953202cf755ecb2d584c743c59d86": {
+    "accuracy": 0.635,
+    "transform": "bf-v1-RandomCrop_RandomAdjustSharpnes_Pad"
+  },
+  "unq-bd1f3c38204b216ab7fb4fc9b6f20c70": {
+    "accuracy": 0.718,
+    "transform": "bf-v1-Pad_RandomEqualize_RandomPosterize"
+  },
+  "unq-be564a0207f2e13eb5cf54f6456ed52b": {
+    "accuracy": 0.648,
+    "transform": "bf-v1-RandomAutocontrast_CenterCrop"
+  },
+  "unq-bf4eb16a3397c97b0bac84637c494dbc": {
+    "accuracy": 0.804,
+    "transform": "bf-v1-RandomRotation_46"
+  },
+  "unq-c047b233deb35f15627d838b6d145e3c": {
+    "accuracy": 0.826,
+    "transform": "bf-v1-RandomAdjustSharpnes_RandomEqualize_3"
+  },
+  "unq-c2942f325d2ccb61d2124d9a671e1328": {
+    "accuracy": 0.866,
+    "transform": "bf-v1-Pad_RandomHorizontalFlip_RandomAffine"
+  },
+  "unq-c2cc5f45b34f30e520c64e739f7d97e9": {
+    "accuracy": 0.819,
+    "transform": "bf-v1-RandomEqualize_RandomAutocontrast_2"
+  },
+  "unq-c41f2b00057cfc2fecce90a4a1489d2f": {
+    "accuracy": 0.303,
+    "transform": "echo_32_flip"
+  },
+  "unq-c4a1bb3115c6fe815eaa7ff63d6b4fd3": {
+    "accuracy": 0.484,
+    "transform": "bf-v1-CenterCrop_RandomRotation_RandomHorizontalFlip"
+  },
+  "unq-c5af8fe5010467faf3d2d45f5600f945": {
+    "accuracy": 0.801,
+    "transform": "bf-v1-RandomAdjustSharpnes_RandomGrayscale_2"
+  },
+  "unq-c79afecbc78ca4bcc62909d1caa04212": {
+    "accuracy": 0.532,
+    "transform": "echo_128_flip"
+  },
+  "unq-c9b38c71c1ebf37bd3ecb63c8d9452cf": {
+    "accuracy": 0.837,
+    "transform": "bf-v1-RandomRotation_46"
+  },
+  "unq-ca4ba1ce33c629ef1849e2d57af7707e": {
+    "accuracy": 0.799,
+    "transform": "bf-v1-RandomAdjustSharpnes_Pad_4"
+  },
+  "unq-cac83bbd940cdb04648ddc4757243aff": {
+    "accuracy": 0.87,
+    "transform": "bf-v1-RandomHorizontalFlip_RandomAutocontrast"
+  },
+  "unq-ced8819a636aeff4bbf08b57fafe3db9": {
+    "accuracy": 0.846,
+    "transform": "bf-v1-RandomRotation_RandomPosterize_5"
+  },
+  "unq-cfb004f2915aa2a7bf54eb794f666d1a": {
+    "accuracy": 0.638,
+    "transform": "bf-v1-Pad_RandomAutocontrast_RandomPosterize"
+  },
+  "unq-d0864e37461f6afe744bff1b6d828366": {
+    "accuracy": 0.84,
+    "transform": "bf-v1-RandomHorizontalFlip_RandomAdjustSharpnes_RandomPerspective"
+  },
+  "unq-d0e40092c7ec3cc47c00072759f4c2fc": {
+    "accuracy": 0.464,
+    "transform": "bf-v1-CenterCrop_RandomPosterize_RandomRotation"
+  },
+  "unq-d13d024bca6355812078b7d2a6495f05": {
+    "accuracy": 0.801,
+    "transform": "bf-v1-RandomPerspective_RandomPosterize_4"
+  },
+  "unq-d1e1b7cdc4fa01beaef3f114c5065748": {
+    "accuracy": 0.875,
+    "transform": "norm_flip"
+  },
+  "unq-d22271f5404aba0b0becf6e60b27b499": {
+    "accuracy": 0.838,
+    "transform": "bf-v1-RandomPerspective_RandomAutocontrast_2"
+  },
+  "unq-d449045d73f5e8ec5697814538118ee3": {
+    "accuracy": 0.812,
+    "transform": "bf-v1-Pad_RandomHorizontalFlip_RandomAdjustSharpnes"
+  },
+  "unq-d4df39f55e0adb5de957cdc57815a2eb": {
+    "accuracy": 0.458,
+    "transform": "bf-v1-RandomCrop_RandomAdjustSharpnes_Pad"
+  },
+  "unq-d4f86c0cf2317aac55deeec5701cec8f": {
+    "accuracy": 0.0,
+    "transform": "bf-v1-RandomAdjustSharpnes_GaussianBlur_5"
+  },
+  "unq-d500d10c8de78175ade48bad89ff84b0": {
+    "accuracy": 0.729,
+    "transform": "bf-v1-RandomHorizontalFlip_RandomPosterize_Pad"
+  },
+  "unq-d54c775b8b4d804b47f80f970750f00e": {
+    "accuracy": 0.535,
+    "transform": "bf-v1-CenterCrop_RandomHorizontalFlip_2"
+  },
+  "unq-d63f1db03c7afce5e8dbb7636294c51c": {
+    "accuracy": 0.486,
+    "transform": "bf-v1-RandomCrop_RandomAdjustSharpnes_6"
+  },
+  "unq-d7341a2efd633b39c9a869e02072f597": {
+    "accuracy": 0.309,
+    "transform": "bf-v1-RandomEqualize_CenterCrop_4"
+  },
+  "unq-d8476beef3aed3b0be1d8c631844ab06": {
+    "accuracy": 0.823,
+    "transform": "bf-v1-RandomHorizontalFlip_Pad_RandomAdjustSharpnes"
+  },
+  "unq-d93b15ad665cd8c3e7cd97dbf84031e4": {
+    "accuracy": 0.851,
+    "transform": "bf-v1-RandomAdjustSharpnes_RandomEqualize_3"
+  },
+  "unq-d9e418e405abf45ae9dffb6423cc7318": {
+    "accuracy": 0.829,
+    "transform": "bf-v1-RandomPosterize_Pad"
+  },
+  "unq-dafff0011a91d7105aeb67018ff8e09c": {
+    "accuracy": 0.357,
+    "transform": "bf-v1-Pad_RandomPosterize_CenterCrop"
+  },
+  "unq-dbcf6758d4b17ee6dfb3bbe2450f62fa": {
+    "accuracy": 0.451,
+    "transform": "bf-v1-RandomPerspective_RandomCrop"
+  },
+  "unq-dce1933ad61e67e8f6961232b0ed0231": {
+    "accuracy": 0.502,
+    "transform": "bf-v1-RandomPerspective_RandomCrop"
+  },
+  "unq-dd624ec0a8a77f5f7f9bf0689926e182": {
+    "accuracy": 0.486,
+    "transform": "echo_32_flip"
+  },
   "unq-dd9d43a3eb47a3c1df38bbf40d7ebaa5": {
     "accuracy": 0.866,
     "transform": "norm_32"
@@ -1030,6 +2014,18 @@
   "unq-de5bd2403810bc5ff4048a8f19700116": {
     "accuracy": 0.537,
     "transform": "bf-v1-RandomCrop_CenterCrop_RandomAutocontrast"
+  },
+  "unq-deef6f1196b3e825bdcce75daec86d8b": {
+    "accuracy": 0.865,
+    "transform": "bf-v1-Pad_RandomEqualize_2"
+  },
+  "unq-df7268ecc0044787dc83bf495f3badae": {
+    "accuracy": 0.661,
+    "transform": "bf-v1-RandomAutocontrast_Pad_4"
+  },
+  "unq-df7508f51fe6ca515ea9811e85c44eba": {
+    "accuracy": 0.539,
+    "transform": "bf-v1-RandomHorizontalFlip_RandomCrop_RandomPosterize"
   },
   "unq-dfadeae7bdcb54f4812e5d8f53c41cb0": {
     "accuracy": 0.884,
@@ -1059,17 +2055,49 @@
     "accuracy": 0.802,
     "transform": "bf-v1-RandomRotation_RandomPosterize_5"
   },
+  "unq-e379e94250005861fb8816daa9c5b0d8": {
+    "accuracy": 0.844,
+    "transform": "bf-v1-RandomAdjustSharpnes_RandomPosterize"
+  },
+  "unq-e3aec622909575e3f83b28220a34da3f": {
+    "accuracy": 0.8,
+    "transform": "bf-v1-RandomAdjustSharpnes_RandomGrayscale_2"
+  },
+  "unq-e3d674bb2ddc2a203ae9e18092097b24": {
+    "accuracy": 0.411,
+    "transform": "bf-v1-CenterCrop_RandomPosterize_RandomRotation"
+  },
+  "unq-e3fbb5272ddcb9c30f6782f3d2c6b015": {
+    "accuracy": 0.808,
+    "transform": "bf-v1-Pad_38"
+  },
   "unq-e3fbebacee71560dedd5007ca6a38c49": {
     "accuracy": 0.866,
     "transform": "bf-v1-RandomAdjustSharpnes"
+  },
+  "unq-e44ae24011ab6ce02881cea9e1fd8422": {
+    "accuracy": 0.439,
+    "transform": "bf-v1-RandomHorizontalFlip_RandomAutocontrast_CenterCrop"
   },
   "unq-e44cb7a653488f81e2ae6af25c16231e": {
     "accuracy": 0.866,
     "transform": "bf-v1-RandomAdjustSharpnes_RandomSolarize_2"
   },
+  "unq-e48d0591ef09fcec6a45fc75dc4602eb": {
+    "accuracy": 0.829,
+    "transform": "bf-v1-Pad_RandomAdjustSharpnes_RandomAutocontrast"
+  },
+  "unq-e5616457b750b03b15c6ac0b19f9f738": {
+    "accuracy": 0.831,
+    "transform": "norm_128_flip"
+  },
   "unq-e63f8eda71470d27626a3a3374a67313": {
     "accuracy": 0.413,
     "transform": "bf-v1-RandomHorizontalFlip_RandomAdjustSharpnes_RandomCrop"
+  },
+  "unq-e829307b85fbe806e9603e92db40432c": {
+    "accuracy": 0.813,
+    "transform": "norm_256"
   },
   "unq-e8c8ffb22b408e6e21d148cb223d9f4a": {
     "accuracy": 0.448,
@@ -1078,6 +2106,14 @@
   "unq-e928c5cf875eddf85c767433f1e5b49d": {
     "accuracy": 0.83,
     "transform": "bf-v1-RandomGrayscale_Pad_5"
+  },
+  "unq-e94b07fc7608be5f53894e9d68be1fed": {
+    "accuracy": 0.824,
+    "transform": "bf-v1-RandomRotation_Pad_2"
+  },
+  "unq-e95137bd067ae892db35f40987867f54": {
+    "accuracy": 0.337,
+    "transform": "bf-v1-RandomCrop_CenterCrop_5"
   },
   "unq-e985a3423c752050b8dd9c0f3c5bfa83": {
     "accuracy": 0.854,
@@ -1095,6 +2131,10 @@
     "accuracy": 0.822,
     "transform": "bf-v1-RandomGrayscale_Pad_5"
   },
+  "unq-e9f0c45f824764dbd8b4f93309a56919": {
+    "accuracy": 0.761,
+    "transform": "norm_32"
+  },
   "unq-e9fecd5d808ceed2dbcc66099c0e8274": {
     "accuracy": 0.654,
     "transform": "bf-v1-Pad_RandomCrop_5"
@@ -1107,6 +2147,10 @@
     "accuracy": 0.365,
     "transform": "bf-v1-CenterCrop_Pad_RandomAutocontrast"
   },
+  "unq-ebf99f2b6fa529f179b1c8907540e675": {
+    "accuracy": 0.196,
+    "transform": "bf-v1-RandomCrop_RandomPerspective"
+  },
   "unq-ec47f92c22dc21e4b4c00c93503264d0": {
     "accuracy": 0.418,
     "transform": "bf-v1-RandomGrayscale_CenterCrop_2"
@@ -1115,9 +2159,25 @@
     "accuracy": 0.886,
     "transform": "bf-v1-RandomAutocontrast_RandomRotation"
   },
+  "unq-ecc8548dee08ffb1ab8cc7bb73ff2e89": {
+    "accuracy": 0.863,
+    "transform": "bf-v1-RandomGrayscale_RandomHorizontalFlip_4"
+  },
+  "unq-ed4c857aaa7ed54bd6ebd0e234cb9e13": {
+    "accuracy": 0.833,
+    "transform": "bf-v1-RandomRotation_RandomAutocontrast_3"
+  },
   "unq-ed9addff13fd74726eeec33bc160856a": {
     "accuracy": 0.358,
     "transform": "bf-v1-RandomHorizontalFlip_RandomCrop_Pad"
+  },
+  "unq-eef1ae6ae969e09d73a29589bcc0d12d": {
+    "accuracy": 0.761,
+    "transform": "bf-v1-Pad_RandomRotation_RandomAutocontrast"
+  },
+  "unq-ef3f42e4c47f693dd8dcbcddca682295": {
+    "accuracy": 0.352,
+    "transform": "echo_128_flip"
   },
   "unq-f06c45546807e328c053aa06ab41b122": {
     "accuracy": 0.354,
@@ -1126,6 +2186,18 @@
   "unq-f0c6572e1066b3fdae37750b6cb8fdbc": {
     "accuracy": 0.852,
     "transform": "bf-v1-RandomPosterize_RandomAutocontrast"
+  },
+  "unq-f0ecd8ad758261d3a40b41d1c276cab9": {
+    "accuracy": 0.568,
+    "transform": "bf-v1-CenterCrop_RandomAdjustSharpnes_RandomPosterize"
+  },
+  "unq-f155edbe6b59e283d67928708892fe22": {
+    "accuracy": 0.849,
+    "transform": "norm_128"
+  },
+  "unq-f18ee05bf0bfa1a7fb5f3c01098681b4": {
+    "accuracy": 0.853,
+    "transform": "bf-v1-Pad_RandomHorizontalFlip_RandomAdjustSharpnes"
   },
   "unq-f1b81d27a39d43bdce8da6c45c3b9259": {
     "accuracy": 0.428,
@@ -1151,6 +2223,10 @@
     "accuracy": 0.383,
     "transform": "bf-v1-RandomHorizontalFlip_CenterCrop_Pad"
   },
+  "unq-f2fbab5183a1fb7cf0ce0e1e45a369d1": {
+    "accuracy": 0.854,
+    "transform": "bf-v1-RandomHorizontalFlip_Pad_5"
+  },
   "unq-f312d70c6cdc40ee68ae7a8b6258142d": {
     "accuracy": 0.856,
     "transform": "bf-v1-RandomGrayscale_80"
@@ -1159,9 +2235,21 @@
     "accuracy": 0.389,
     "transform": "bf-v1-RandomRotation_CenterCrop_6"
   },
+  "unq-f34bbf4b01284f8c0aeca2a0964c7139": {
+    "accuracy": 0.822,
+    "transform": "bf-v1-RandomHorizontalFlip_Pad_RandomAdjustSharpnes"
+  },
+  "unq-f37e9c7afd0994f9363e20f05339951e": {
+    "accuracy": 0.774,
+    "transform": "bf-v1-Pad_RandomPosterize_RandomHorizontalFlip"
+  },
   "unq-f39277d6cff7c8d8ead5d890a36dc2ca": {
     "accuracy": 0.765,
     "transform": "bf-v1-Pad_RandomAutocontrast_RandomPosterize"
+  },
+  "unq-f39dbf03c027d11a1a9e21f3e5cde6b2": {
+    "accuracy": 0.837,
+    "transform": "bf-v1-RandomHorizontalFlip_RandomAdjustSharpnes_Pad"
   },
   "unq-f3caa7a278d22bb55745ad9620902a30": {
     "accuracy": 0.471,
@@ -1175,6 +2263,34 @@
     "accuracy": 0.273,
     "transform": "bf-v1-CenterCrop_Pad_RandomAdjustSharpnes"
   },
+  "unq-f49204657bf32cbece3a59ca34b47c28": {
+    "accuracy": 0.334,
+    "transform": "bf-v1-CenterCrop_RandomGrayscale_6"
+  },
+  "unq-f578470dbd45e426efe36dc5f0b10e15": {
+    "accuracy": 0.817,
+    "transform": "bf-v1-RandomPosterize_58"
+  },
+  "unq-f5a8112773022570df4028231c36c9c3": {
+    "accuracy": 0.832,
+    "transform": "norm_64"
+  },
+  "unq-f5eab9340f758543a5b95d676e3684a8": {
+    "accuracy": 0.644,
+    "transform": "bf-v1-RandomHorizontalFlip_RandomCrop_Pad"
+  },
+  "unq-f637c0048f0e75e4db89776604eb8d01": {
+    "accuracy": 0.799,
+    "transform": "bf-v1-RandomRotation_RandomAutocontrast_3"
+  },
+  "unq-f647dfceb5f67bf19f9b85b631a3ec52": {
+    "accuracy": 0.518,
+    "transform": "bf-v1-RandomHorizontalFlip_RandomAdjustSharpnes_RandomCrop"
+  },
+  "unq-f68c60391145b49c10c9603904985343": {
+    "accuracy": 0.863,
+    "transform": "bf-v1-RandomEqualize_RandomAutocontrast_2"
+  },
   "unq-f78f73ef21949ab8a1554e4575a75371": {
     "accuracy": 0.464,
     "transform": "echo_64_flip"
@@ -1183,9 +2299,25 @@
     "accuracy": 0.856,
     "transform": "bf-v1-RandomRotation_46"
   },
+  "unq-f93f089264954e7670cb5cb5957d6066": {
+    "accuracy": 0.797,
+    "transform": "bf-v1-Pad_RandomRotation_RandomAutocontrast"
+  },
+  "unq-f9a2466de5f675ddff142adae33232cb": {
+    "accuracy": 0.854,
+    "transform": "bf-v1-RandomAdjustSharpnes_RandomPosterize"
+  },
+  "unq-fa828bbced13e2ae5282a1c1c1fb9f52": {
+    "accuracy": 0.859,
+    "transform": "bf-v1-RandomAdjustSharpnes"
+  },
   "unq-fab51256c3f5ab94c502485d22cb5c5f": {
     "accuracy": 0.763,
     "transform": "bf-v1-RandomHorizontalFlip_Pad_RandomAdjustSharpnes"
+  },
+  "unq-fad1fe601eb74fbcb7777e68a1a55941": {
+    "accuracy": 0.778,
+    "transform": "bf-v1-Pad_RandomEqualize_RandomAdjustSharpnes"
   },
   "unq-fb3fdb1623cf7d6beeab9c7c3be93454": {
     "accuracy": 0.676,
@@ -1202,6 +2334,10 @@
   "unq-fdeefc64942da8b157bcf92c3f4e6d52": {
     "accuracy": 0.384,
     "transform": "bf-v1-RandomRotation_CenterCrop_6"
+  },
+  "unq-ff2850c965a01658b9c6cd9d2846ef81": {
+    "accuracy": 0.196,
+    "transform": "echo_256_flip"
   },
   "unq-ff28e4184fd0b2eb983bf2b933568c15": {
     "accuracy": 0.854,
