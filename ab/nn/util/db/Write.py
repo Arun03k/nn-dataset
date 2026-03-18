@@ -114,7 +114,7 @@ def json_train_to_db():
                         # Handle comma-separated metrics (e.g., "bleu,meteor,cider")
                         for single_metric in metric.split(','):
                             populate_code_table('metric', cursor, name=single_metric.strip())
-                        if trial['transform'] and trial['transform'] != 'default':
+                        if trial['transform']:
                             populate_code_table('transform', cursor, name=trial['transform'])
                         save_stat(sub_config + (epoch,), trial, cursor)
                 except Exception as e:
