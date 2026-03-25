@@ -49,6 +49,55 @@ def data(only_best_accuracy=False, task=None, dataset=None, metric=None, nn=None
     return DataFrame.from_records(dt)
 
 
+def data_withnonnullvalue(
+    only_best_accuracy=False,
+    task=None,
+    dataset=None,
+    metric=None,
+    nn=None,
+    epoch=None,
+    max_rows=None,
+    nn_prefixes=None,
+    sql=None,
+    unique_nn=False,
+    include_nn_stats=False,
+    include_prm=True,
+    require_stat_nonnull=(),
+    require_nn_stat_nonnull=(),
+    require_prm_nonnull=(),
+    prm_as_columns=False,
+) -> DataFrame:
+    """
+    Training rows from ``stat`` with optional ``nn_stat`` and ``prm`` data, dropping rows where
+    any *required* field is NULL or NaN.
+
+    This calls :func:`ab.nn.util.db.Read.data_withnonnullvalue` — see that docstring for
+    ``require_stat_nonnull``, ``require_nn_stat_nonnull``, ``require_prm_nonnull``,
+    ``include_nn_stats``, ``include_prm``, and ``prm_as_columns``.
+
+    The ``sql`` argument is not supported (use :func:`data` instead).
+    """
+    dt: tuple[dict, ...] = DB_Read.data_withnonnullvalue(
+        only_best_accuracy=only_best_accuracy,
+        task=task,
+        dataset=dataset,
+        metric=metric,
+        nn=nn,
+        epoch=epoch,
+        max_rows=max_rows,
+        nn_prefixes=nn_prefixes,
+        sql=sql,
+        unique_nn=unique_nn,
+        include_nn_stats=include_nn_stats,
+        include_prm=include_prm,
+        require_stat_nonnull=tuple(require_stat_nonnull),
+        require_nn_stat_nonnull=tuple(require_nn_stat_nonnull),
+        require_prm_nonnull=tuple(require_prm_nonnull),
+        prm_as_columns=prm_as_columns,
+    )
+    return DataFrame.from_records(dt)
+
+
 @functools.lru_cache(maxsize=10)
 def run_data(model_name=None, device_type=None, max_rows=None) -> DataFrame:
     """
