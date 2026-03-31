@@ -82,70 +82,6 @@ def build_stat_filters_sql(sql: JoinConf, alias: str = "b") -> tuple[str, list]:
         return "", []
 
     return "WHERE " + " AND ".join(clauses), params
-def _anchor_candidates_table() -> str:
-    return f"{tmp_data}_anchor_candidates"
-
-
-def _ensure_temp_work_indexes(cur: Cursor, work_table: str) -> None:
-    if work_table != tmp_data or not _is_real_table(cur, work_table):
-        return
-    cur.execute(f"CREATE INDEX IF NOT EXISTS idx_{work_table}_id ON {work_table}(id)")
-    cur.execute(
-        f"CREATE INDEX IF NOT EXISTS idx_{work_table}_nn_acc_epoch "
-        f"ON {work_table}(nn, accuracy DESC, epoch ASC, id)"
-    )
-    cur.execute(
-        f"CREATE INDEX IF NOT EXISTS idx_{work_table}_acc_nn_epoch "
-        f"ON {work_table}(accuracy DESC, nn, epoch ASC, id)"
-    )
-
-
-def _ensure_varn_fast_index(cur: Cursor) -> None:
-    cur.execute(
-        "CREATE INDEX IF NOT EXISTS idx_stat_varn_fast "
-        "ON stat(task, dataset, metric, nn, accuracy DESC, epoch ASC, id)"
-    )
-
-
-def _prepare_anchor_candidates(cur: Cursor, sql: "JoinConf", work_table: str) -> str:
-    cand_table = _anchor_candidates_table()
-    where_sql, params = build_stat_filters_sql(sql, alias="s")
-
-    _ensure_temp_work_indexes(cur, work_table)
-    cur.execute(f"DROP TABLE IF EXISTS {cand_table}")
-    cur.execute(
-        f"""
-        CREATE TEMP TABLE {cand_table} AS
-        WITH base AS (
-          SELECT s.id, s.nn, s.accuracy, s.epoch
-          FROM {work_table} s
-          {where_sql}
-        ),
-        best_per_nn AS (
-          SELECT b.id,
-                 b.nn,
-                 b.accuracy,
-                 b.epoch,
-                 ROW_NUMBER() OVER (
-                   PARTITION BY b.nn
-                   ORDER BY b.accuracy DESC, b.epoch ASC, b.nn ASC
-                 ) AS rn
-          FROM base b
-        )
-        SELECT p.id, p.nn, p.accuracy, p.epoch, m.hashvalues AS hv
-        FROM best_per_nn p
-        JOIN nn_minhash m ON m.nn = p.nn
-        WHERE p.rn = 1
-        """,
-        params,
-    )
-    cur.execute(f"CREATE INDEX IF NOT EXISTS idx_{cand_table}_nn ON {cand_table}(nn)")
-    cur.execute(
-        f"CREATE INDEX IF NOT EXISTS idx_{cand_table}_acc_epoch "
-        f"ON {cand_table}(accuracy DESC, epoch ASC, nn)"
-    )
-    cur.execute(f"CREATE INDEX IF NOT EXISTS idx_{cand_table}_id ON {cand_table}(id)")
-    return cand_table
 #---------DB MinHash + SQLite UDF----------
 def _anchor_band_db(
     *,
@@ -488,111 +424,7 @@ def join_nn_query_sql_Var_num(sql: JoinConf,limit_clause:Optional[str], cur: Cur
 
     return fill_hyper_prm(cur, num_joint_nns=1)
 
-
-def select_sql_var_num_candidate_ids(cur: Cursor, sql: JoinConf, work_table: str, base_params: list) -> list[str]:
-    sql.validate()
-    n = int(sql.num_joint_nns)
-    where_sql, params = build_stat_filters_sql(sql, alias="b")
-    _ensure_varn_fast_index(cur)
-
-    cur.execute(
-        f"""
-        WITH base AS (
-          SELECT b.id, b.nn, b.accuracy, b.epoch
-          FROM {work_table} b
-          {where_sql}
-        ),
-        best_per_nn AS (
-          SELECT b.id,
-                 b.nn,
-                 b.accuracy,
-                 b.epoch,
-                 ROW_NUMBER() OVER (
-                   PARTITION BY b.nn
-                   ORDER BY b.accuracy DESC, b.epoch ASC, b.nn ASC
-                 ) AS rn
-          FROM base b
-        )
-        SELECT id
-        FROM best_per_nn
-        WHERE rn = 1
-        ORDER BY accuracy DESC
-        LIMIT ?
-        """,
-        base_params + params + [n],
-    )
-    rows = cur.fetchall()
-    return [row[0] for row in rows]
-
-def _fetch_code_lookup(cur: Cursor, table: str, names: set[str]) -> dict[str, tuple[str, str]]:
-    if not names:
-        return {}
-
-    lookup: dict[str, tuple[str, str]] = {}
-    ordered_names = sorted(names)
-    chunk_size = 900
-    for start in range(0, len(ordered_names), chunk_size):
-        chunk = ordered_names[start:start + chunk_size]
-        placeholders = ', '.join(['?'] * len(chunk))
-        cur.execute(f"SELECT name, code, id FROM {table} WHERE name IN ({placeholders})", chunk)
-        for name, code, uid in cur.fetchall():
-            lookup[name] = (code, uid)
-    return lookup
-
-
-def _attach_legacy_code_fields(cur: Cursor, results: list[dict]) -> None:
-    if not results:
-        return
-
-    nn_map = _fetch_code_lookup(
-        cur,
-        "nn",
-        {rec["nn"] for rec in results if rec.get("nn")} |
-        {rec["nn_2"] for rec in results if rec.get("nn_2")},
-    )
-    metric_map = _fetch_code_lookup(
-        cur,
-        "metric",
-        {rec["metric"] for rec in results if rec.get("metric")} |
-        {rec["metric_2"] for rec in results if rec.get("metric_2")},
-    )
-    transform_map = _fetch_code_lookup(
-        cur,
-        "transform",
-        {rec["transform_name"] for rec in results if rec.get("transform_name")} |
-        {rec["transform_name_2"] for rec in results if rec.get("transform_name_2")},
-    )
-
-    for rec in results:
-        nn_name = rec.get("nn")
-        if nn_name in nn_map:
-            rec["nn_code"], rec["nn_id"] = nn_map[nn_name]
-
-        nn_name_2 = rec.get("nn_2")
-        if nn_name_2 in nn_map:
-            rec["nn_code_2"], _ = nn_map[nn_name_2]
-
-        metric_name = rec.get("metric")
-        if metric_name in metric_map:
-            rec["metric_code"], rec["metric_id"] = metric_map[metric_name]
-
-        metric_name_2 = rec.get("metric_2")
-        if metric_name_2 in metric_map:
-            rec["metric_code_2"], _ = metric_map[metric_name_2]
-
-        transform_name = rec.get("transform_name")
-        if transform_name in transform_map:
-            rec["transform_code"], rec["transform_id"] = transform_map[transform_name]
-
-        transform_name_2 = rec.get("transform_name_2")
-        if transform_name_2 in transform_map:
-            rec["transform_code_2"], _ = transform_map[transform_name_2]
-
-        rec.pop("transform_name", None)
-        rec.pop("transform_name_2", None)
-
-
-def join_nn_query_legacy(sql: JoinConf,limit_clause:Optional[str], cur, include_nn_stats: bool = False):
+def join_nn_query_legacy(sql: JoinConf,limit_clause:Optional[str], cur):
     if _is_real_table(cur, tmp_data):
         cur.execute(f'CREATE INDEX IF NOT EXISTS i_id ON {tmp_data}(id)')
 
@@ -622,63 +454,10 @@ def join_nn_query_legacy(sql: JoinConf,limit_clause:Optional[str], cur, include_
         q_list.append(f'd2.accuracy > d1.accuracy')
     where_clause = 'WHERE ' + ' AND '.join(q_list) if q_list else ''
 
-    nn_stats_select = ""
-    nn_stats_join = ""
-    if include_nn_stats:
-        nn_stats_select = """
-    ns.total_params AS nn_total_params,
-    ns.trainable_params AS nn_trainable_params,
-    ns.frozen_params AS nn_frozen_params,
-    ns.total_layers AS nn_total_layers,
-    ns.leaf_layers AS nn_leaf_layers,
-    ns.max_depth AS nn_max_depth,
-    ns.flops AS nn_flops,
-    ns.model_size_mb AS nn_model_size_mb,
-    ns.buffer_size_mb AS nn_buffer_size_mb,
-    ns.total_memory_mb AS nn_total_memory_mb,
-    ns.dropout_count AS nn_dropout_count,
-    ns.has_attention AS nn_has_attention,
-    ns.has_residual_connections AS nn_has_residual,
-    ns.is_resnet_like AS nn_is_resnet_like,
-    ns.is_vgg_like AS nn_is_vgg_like,
-    ns.is_inception_like AS nn_is_inception_like,
-    ns.is_densenet_like AS nn_is_densenet_like,
-    ns.is_unet_like AS nn_is_unet_like,
-    ns.is_transformer_like AS nn_is_transformer_like,
-    ns.is_mobilenet_like AS nn_is_mobilenet_like,
-    ns.is_efficientnet_like AS nn_is_efficientnet_like,
-    ns.code_length AS nn_code_length,
-    ns.num_classes_defined AS nn_num_classes,
-    ns.num_functions_defined AS nn_num_functions,
-    ns.uses_sequential AS nn_uses_sequential,
-    ns.uses_modulelist AS nn_uses_modulelist,
-    ns.uses_moduledict AS nn_uses_moduledict,
-    ns.meta_json AS nn_stats_meta,
-    ns.error AS nn_stats_error,
-"""
-        nn_stats_join = """
-LEFT JOIN nn_stat ns ON m.nn = ns.nn_name AND m.prm_id = ns.prm_id
-"""
-
     cur.execute(f'''
 WITH matches AS (
   SELECT
-      d1.id,
-      d1.task,
-      d1.dataset,
-      d1.metric,
-      NULL AS metric_code,
-      NULL AS metric_id,
-      d1.nn,
-      NULL AS nn_code,
-      NULL AS nn_id,
-      d1.epoch,
-      d1.accuracy,
-      d1.duration,
-      d1.prm AS prm_id,
-      NULL AS transform_code,
-      NULL AS transform_id,
-      d1.transform AS transform_name,
+      d1.*,
       (
           SELECT d2.id
           FROM {tmp_data} d2
@@ -688,40 +467,19 @@ WITH matches AS (
   FROM {tmp_data} d1
 )
 SELECT
-    m.id,
-    m.task,
-    m.dataset,
-    m.metric,
-    m.metric_code,
-    m.metric_id,
-    m.nn,
-    m.nn_code,
-    m.nn_id,
-    m.epoch,
-    m.accuracy,
-    m.duration,
-    m.prm_id,
-    m.transform_code,
-    m.transform_id,
-    m.transform_name,
-    {nn_stats_select}    m.matched_id,
+    m.*,
     d2.nn       AS nn_2,
-    NULL        AS nn_code_2,
+    d2.nn_code  AS nn_code_2,
     d2.metric AS metric_2,
-    NULL        AS metric_code_2,
-    NULL        AS transform_code_2,
-    d2.prm AS prm_id_2,
+    d2.metric_code  AS metric_code_2,
+    d2.transform_code  AS transform_code_2,
+    d2.prm_id AS prm_id_2,
     d2.accuracy AS accuracy_2,
     d2.duration AS duration_2,    
-    d2.epoch AS epoch_2,
-    d2.transform AS transform_name_2
+    d2.epoch AS epoch_2    
 FROM matches m
-LEFT JOIN {tmp_data} d2 ON d2.id = m.matched_id
-{nn_stats_join}
-{limit_clause}''')
-    results = fill_hyper_prm(cur, sql.num_joint_nns, include_nn_stats=include_nn_stats)
-    _attach_legacy_code_fields(cur, results)
-    return results
+LEFT JOIN {tmp_data} d2 ON d2.id = m.matched_id{limit_clause}''')
+    return fill_hyper_prm(cur, sql.num_joint_nns)
 
 #------Hyperparameter assembly------
 def fill_hyper_prm(cur: Cursor, num_joint_nns=1, include_nn_stats=False) -> list[dict]:
@@ -729,30 +487,12 @@ def fill_hyper_prm(cur: Cursor, num_joint_nns=1, include_nn_stats=False) -> list
     if not rows: return []  # short-circuit for an empty result
     columns = [c[0] for c in cur.description]
 
-    col_idx = {name: idx for idx, name in enumerate(columns)}
-    needed_prm_ids: set[str] = set()
-    for name in ["prm_id", *[f"prm_id_{i}" for i in range(2, num_joint_nns + 1)]]:
-        idx = col_idx.get(name)
-        if idx is None:
-            continue
-        for row in rows:
-            uid = row[idx]
-            if uid is not None:
-                needed_prm_ids.add(uid)
-    # Load only the hyperparameters needed for the retrieved result rows.
+    # Bulk-load *all* hyperparameters for the retrieved stat_ids
     from collections import defaultdict
     prm_by_uid: dict[str, dict[str, int | float | str]] = defaultdict(dict)
 
-    prm_rows = []
-    if needed_prm_ids:
-        chunk_size = 900
-        needed_prm_list = sorted(needed_prm_ids)
-        for i in range(0, len(needed_prm_list), chunk_size):
-            chunk = needed_prm_list[i:i + chunk_size]
-            placeholders = ",".join("?" for _ in chunk)
-            cur.execute(f"SELECT uid, name, value FROM prm WHERE uid IN ({placeholders})", chunk)
-            prm_rows.extend(cur.fetchall())
-    for uid, name, value in prm_rows:
+    cur.execute(f"SELECT uid, name, value FROM prm")
+    for uid, name, value in cur.fetchall():
         prm_by_uid[uid][name] = value
 
     # Assemble the final result
