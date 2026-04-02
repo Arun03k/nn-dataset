@@ -276,13 +276,17 @@ class Train:
         self.save_path = None
 
         self.system_info = get_system_info()
-        self.tb_log_dir = _ensure_dir(tb_log_dir)
-        # Visualization directory under checkpoints: out/ckpt/<Model>/Visualization
-        try:
-            model_short = str(self.model_name).split('.')[-1]
-        except Exception:
-            model_short = str(self.model_name)
-        self.viz_dir = _ensure_dir(os.path.join(str(ckpt_dir), model_short, 'Visualization'))
+        
+        # Centralized visualization directory for age estimation
+        # Everything goes to age-estimation-visualization/ for easy transfer
+        from ab.nn.util.Const import ab_root_path
+        age_viz_root = _ensure_dir(os.path.join(str(ab_root_path), 'age-estimation-visualization'))
+        
+        # Subdirectories for organization
+        self.viz_dir = _ensure_dir(os.path.join(age_viz_root, 'plots'))
+        self.tb_log_dir = _ensure_dir(os.path.join(age_viz_root, 'tensorboard', tb_log_dir.replace('runs/', '')))
+        self.metrics_dir = _ensure_dir(os.path.join(age_viz_root, 'metrics'))
+        self.models_dir = _ensure_dir(os.path.join(age_viz_root, 'models'))
 
     def _get_loss_function(self):
         """Get loss function for metric tracking."""
@@ -368,7 +372,8 @@ class Train:
         """Training and evaluation with comprehensive metrics tracking."""
 
         if save_path is None and not self.is_code:
-            save_path = model_stat_dir(self.config)
+            # Save model stats to centralized age-estimation-visualization folder
+            save_path = self.metrics_dir
         self.save_path = save_path
 
         start_time = time.time_ns()
@@ -562,7 +567,7 @@ class Train:
             if save_pth_weights or save_onnx_weights:
                 save_if_best(
                     self.model, self.model_name, accuracy, save_pth_weights, save_onnx_weights,
-                    train_set, self.num_workers, save_path=save_path
+                    train_set, self.num_workers, save_path=self.models_dir
                 )
 
             only_prm = {k: v for k, v in self.prm.items() if k not in {'uid', 'duration', 'accuracy', 'epoch'}}
